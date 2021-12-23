@@ -29,7 +29,7 @@ function generatePassword() {
   
   if (confirmPrompt < 8 || confirmPrompt > 128) {
     alert("Password must contain between 8 to 128 characters! Click Generate Password!");
-    
+
   } else { 
 
     if (confirm("Would you like upper case letters in your password?") == true) {
@@ -69,7 +69,7 @@ function generatePassword() {
   }
 
   if (specialCharSelected === true) {
-    newPassChars += specialCharSelected;
+    newPassChars += specialChar;
   }
 
   var finalPass = "";
