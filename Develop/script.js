@@ -51,25 +51,29 @@ function generatePassword() {
 
     if (upperCaseSelected === false && lowerCaseSelected === false && 
       specialCharSelected === false && numSelected === false) {
-      alert("Password generation requires at least one character to complete a successful password!")
+      alert("Password generation requires at least one character type to complete a successful password!")
     }
   }
 
   var newPasswordChars = [];
 
-  if (upperCaseSelected) {
+  if (upperCaseSelected === true) {
     newPasswordChars += upperCaseChar;
   }
 
-  if (lowerCaseSelected) {
+  if (lowerCaseSelected === true) {
     newPasswordChars += lowerCaseChar;
   }
 
-  if (numSelected) {
-
+  if (numSelected === true) {
+    newPasswordChars += numbers;
   }
 
+  if (specialCharSelected === true) {
+    newPasswordChars += specialCharSelected;
+  }
 
+  return newPasswordChars;
 }
 
 // Add event listener to generate button
