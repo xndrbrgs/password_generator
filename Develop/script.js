@@ -26,6 +26,7 @@ function writePassword() {
 
 function generatePassword() {
   var confirmPrompt = prompt("How many characters would you like your password to have?");
+  alert("Select OK for Yes --- Select Cancel for No");
   
   if (confirmPrompt < 8 || confirmPrompt > 128) {
     alert("Password must contain between 8 to 128 characters! Click Generate Password!");
@@ -48,10 +49,27 @@ function generatePassword() {
       specialCharSelected = true;
     }
 
-    if (upperCaseSelected === false && lowerCaseSelected === false && specialCharSelected === false && numSelected === false) {
+    if (upperCaseSelected === false && lowerCaseSelected === false && 
+      specialCharSelected === false && numSelected === false) {
       alert("Password generation requires at least one character to complete a successful password!")
     }
   }
+
+  var newPasswordChars = [];
+
+  if (upperCaseSelected) {
+    newPasswordChars += upperCaseChar;
+  }
+
+  if (lowerCaseSelected) {
+    newPasswordChars += lowerCaseChar;
+  }
+
+  if (numSelected) {
+
+  }
+
+
 }
 
 // Add event listener to generate button
