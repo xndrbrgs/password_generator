@@ -55,25 +55,31 @@ function generatePassword() {
     }
   }
 
-  var newPasswordChars = [];
+  var newPassChars = [];
 
   if (upperCaseSelected === true) {
-    newPasswordChars += upperCaseChar;
+    newPassChars += upperCaseChar;
   }
 
   if (lowerCaseSelected === true) {
-    newPasswordChars += lowerCaseChar;
+    newPassChars += lowerCaseChar;
   }
 
   if (numSelected === true) {
-    newPasswordChars += numbers;
+    newPassChars += numbers;
   }
 
   if (specialCharSelected === true) {
-    newPasswordChars += specialCharSelected;
+    newPassChars += specialCharSelected;
   }
 
-  return newPasswordChars;
+  var finalPass = "";
+
+  for (var i = 0; i < confirmPrompt; i++) {
+    finalPass += newPassChars[Math.floor(Math.random() * newPassChars.length)];
+  }
+
+  return finalPass;
 }
 
 // Add event listener to generate button
